@@ -35,4 +35,16 @@ class Issue extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    /**
+     * Gets all the tags that have been assigned to this issue.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tags()
+    {
+        return $this->hasMany(Tag::class);
+    }
+
+
 }
