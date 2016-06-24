@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Issue extends Model
 {
+
+    /**
+     * The fillable attributes for a comment.
+     *
+     * @var array
+     */
+    protected $fillable = ['title', 'comment'];
+
     /**
      * Gets the user who owns the issue.
      *
