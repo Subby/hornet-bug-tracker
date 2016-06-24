@@ -33,4 +33,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Project::class);
     }
+
+    /**
+     * Gets all the issues that this user owns.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany the issues
+     */
+    public function issues()
+    {
+        return $this->hasMany(Issue::class);
+    }
 }
