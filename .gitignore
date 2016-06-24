@@ -5,4 +5,8 @@ Homestead.yaml
 Homestead.json
 .env
 /database/database.sqlite
-/.idea
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
