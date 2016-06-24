@@ -26,7 +26,7 @@ class User extends Authenticatable
 
     /**
      * Gets all the projects that this user owns.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany the projects
      */
     public function projects()
