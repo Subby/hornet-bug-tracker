@@ -8,6 +8,7 @@ class Issue extends Model
 {
     /**
      * Gets the user who owns the issue.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo the user
      */
     public function user()
@@ -16,12 +17,22 @@ class Issue extends Model
     }
 
     /**
-     * Gets the project the issue belongs to
+     * Gets the project the issue belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo the issue
      */
     public function project()
     {
         return $this->belongsTo(Issue::class);
+    }
+
+    /**
+     * Get the comments belonging to this issue.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
