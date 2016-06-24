@@ -20,4 +20,14 @@ class Project extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Gets all the issues for the project.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany the issues
+     */
+    public function issues()
+    {
+        return $this->hasMany(Issue::class);
+    }
 }

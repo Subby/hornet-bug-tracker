@@ -14,4 +14,14 @@ class Issue extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Gets the project the issue belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo the issue
+     */
+    public function project()
+    {
+        return $this->belongsTo(Issue::class);
+    }
 }
