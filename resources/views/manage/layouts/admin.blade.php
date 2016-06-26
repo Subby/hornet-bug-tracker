@@ -48,6 +48,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/home') }}">Home</a></li>
+                <li><a href="{{ url('/manage') }}">Manage Dashboard</a></li>
                 <li><a href="{{ url('/manage/projects') }}">Projects</a></li>
                 <li><a href="{{ url('/manage/users') }}">Users</a></li>
                 <li><a href="{{ url('/manage/tags') }}">Tags</a></li>
