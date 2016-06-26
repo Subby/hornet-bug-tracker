@@ -20,3 +20,6 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/manage', 'Manage\ManageController@index');
+
+//Routes for managing projects
+Route::get('/manage/projects', 'Manage\ProjectController@index');
