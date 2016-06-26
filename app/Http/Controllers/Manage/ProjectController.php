@@ -20,4 +20,24 @@ class ProjectController extends Controller
         $projects = Project::all();
         return view('manage.projects.index', ['projects' => $projects]);
     }
+
+    public function create(Request $request)
+    {
+        return view('manage.projects.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:12',
+            'description' => 'required'
+        ]);
+
+        $request->user()->projects()->create([
+            'name' => $request->name,
+            'description' => $request->description
+        ]);
+
+        return redirect('/manage');
+    }
 }
