@@ -8,7 +8,9 @@
                     <div class="panel-heading">Manage</div>
 
                     <div class="panel-body">
-                        Currently no projects.
+                        @if(count($projects) <= 0)
+                            <p>There are currently no projects. <a href="manage/projects/add">Add</a> one?</p>
+                        @endif
                     </div>
                 </div>
             </div>
