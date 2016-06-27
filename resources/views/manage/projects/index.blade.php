@@ -33,7 +33,7 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <form action="{{url('projects/' . $project->id)}}" method="POST">
+                                            <form action="{{url('manage/projects/' . $project->id)}}" method="POST">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
 
