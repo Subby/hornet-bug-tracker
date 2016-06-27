@@ -38,6 +38,12 @@ class ProjectController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect('/manage');
+        return redirect('/manage/projects');
+    }
+
+    public function destroy(Request $request, Project $project)
+    {
+        $project->delete();
+        return redirect('/manage/projects');
     }
 }
