@@ -24,5 +24,7 @@ Route::get('/manage', 'Manage\ManageController@index');
 //Routes for managing projects
 Route::get('/manage/projects', 'Manage\ProjectController@index');
 Route::get('/manage/projects/create', 'Manage\ProjectController@create');
+Route::get('/manage/projects/{project}/edit', 'Manage\ProjectController@edit');
+Route::put('/manage/projects/{project}', 'Manage\ProjectController@update');
 Route::post('/manage/projects', 'Manage\ProjectController@store');
 Route::delete('manage/projects/{project}', 'Manage\ProjectController@destroy');

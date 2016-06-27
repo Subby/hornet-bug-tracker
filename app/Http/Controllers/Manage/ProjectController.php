@@ -46,4 +46,22 @@ class ProjectController extends Controller
         $project->delete();
         return redirect('/manage/projects');
     }
+
+    public function edit(Request $request, Project $project)
+    {
+        return view('manage.projects.edit', ['project' => $project]);
+    }
+
+    public function update(Request $request, Project $project)
+    {
+        $project->name = $request->name;
+        $project->description = $request->description;
+        if(isset($request->open)) {
+            $project->open = true;
+        } else {
+            $project->open = false;
+        }
+        $project->save();
+        return redirect('/manage/projects');
+    }
 }

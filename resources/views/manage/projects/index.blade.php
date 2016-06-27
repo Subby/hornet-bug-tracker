@@ -26,7 +26,7 @@
                                         <td>{{$project->name}}</td>
                                         <td>{{count(App\Project::find($project->id)->issues)}}</td>
                                         <td>
-                                            <form action="{{url('projects/' . $project->id. '/edit')}}">
+                                            <form action="{{url('manage/projects/' . $project->id. '/edit')}}">
                                                 <button type="submit" id="edit-task-{{ $project->id }}" class="btn btn-primary">
                                                     <i class="fa fa-btn fa-edit"></i>Edit
                                                 </button>
