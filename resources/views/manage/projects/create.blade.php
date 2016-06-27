@@ -21,11 +21,9 @@
                                 <textarea name="description" class="form-control" rows="3" placeholder="Description"></textarea>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-offset-3 col-sm-6">
-                                    <button type="submit" class="btn btn-default">
-                                        <i class="fa fa-btn fa-plus"></i>Add Project
-                                    </button>
-                                </div>
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-btn fa-plus"></i>Add Project
+                                </button>
                             </div>
                         </form>
                     </div>
