@@ -11,7 +11,7 @@
                         @if(count($projects) <= 0)
                             <p>There are currently no projects. <a href="projects/add">Add</a> one?</p>
                         @else
-                            <table>
+                            <table class="table table-striped task-table">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -21,12 +21,38 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($projects as $project)
                                     <tr>
+                                        <td>{{$project->name}}</td>
+                                        <td>{{count(App\Project::find($project->id)->issues)}}</td>
+                                        <td>
+                                            <form action="{{url('projects/' . $project->id. '/edit')}}">
+                                                <button type="submit" id="edit-task-{{ $project->id }}" class="btn btn-primary">
+                                                    <i class="fa fa-btn fa-edit"></i>Edit
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="{{url('projects/' . $project->id)}}" method="POST">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
 
+                                                <button type="submit" id="delete-task-{{ $project->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-trash"></i>Delete
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td></td>
                                     </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         @endif
+                            <form action="{{url('manage/projects/create')}}">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-plus"></i>Create New Project
+                                </button>
+                            </form>
                     </div>
                 </div>
             </div>
