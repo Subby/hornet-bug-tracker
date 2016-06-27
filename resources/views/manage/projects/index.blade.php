@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         @if(count($projects) <= 0)
-                            <p>There are currently no projects. <a href="projects/add">Add</a> one?</p>
+                            <p>There are currently no projects. <a href="projects/create">Add</a> one?</p>
                         @else
                             <table class="table table-striped task-table">
                                 <thead>
