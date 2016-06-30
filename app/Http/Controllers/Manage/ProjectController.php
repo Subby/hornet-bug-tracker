@@ -15,17 +15,32 @@ class ProjectController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Show all the current projects.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(Request $request)
     {
         $projects = Project::all();
         return view('manage.projects.index', ['projects' => $projects]);
     }
 
+    /**
+     * Show form to create a new project.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create(Request $request)
     {
         return view('manage.projects.create');
     }
 
+    /**
+     * Store newly created form.
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -41,17 +56,36 @@ class ProjectController extends Controller
         return redirect('/manage/projects');
     }
 
+    /**
+     * Delete a project.
+     * @param Request $request
+     * @param Project $project
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
     public function destroy(Request $request, Project $project)
     {
         $project->delete();
         return redirect('/manage/projects');
     }
 
+    /**
+     * Edit a existing project.
+     * @param Request $request
+     * @param Project $project
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit(Request $request, Project $project)
     {
         return view('manage.projects.edit', ['project' => $project]);
     }
 
+    /**
+     * Update a existing project.
+     * @param Request $request
+     * @param Project $project
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update(Request $request, Project $project)
     {
         $project->name = $request->name;
