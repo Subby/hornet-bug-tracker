@@ -18,7 +18,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="colour">Colour</label>
-                                <select class="form-control" id="colour">
+                                <select class="form-control" id="colour" name="colour">
                                     <option value="bg-primary" class="bg-primary">Blue</option>
                                     <option value="bg-info" class="bg-info">Light Blue</option>
                                     <option value="bg-success"  class="bg-success">Green</option>
