@@ -20,4 +20,14 @@ class TagController extends Controller
         $tags = Tag::all();
         return view('manage.tags.index', ['tags' => $tags]);
     }
+
+    /**
+     * Show form to create a new project.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create(Request $request)
+    {
+        return view('manage.projects.create');
+    }
 }
