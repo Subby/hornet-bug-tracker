@@ -17,11 +17,6 @@
                                 <input name="tag" type="text" class="form-control" placeholder="Name">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-btn fa-plus"></i>Add Tag
-                                </button>
-                            </div>
-                            <div class="form-group">
                                 <label for="colour">Colour</label>
                                 <select class="form-control" id="colour">
                                     <option value="bg-primary" class="bg-primary">Blue</option>
@@ -30,6 +25,11 @@
                                     <option value="bg-warning" class="bg-warning">Yellow</option>
                                     <option value="bg-danger" class="bg-danger">Red</option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-btn fa-plus"></i>Add Tag
+                                </button>
                             </div>
                         </form>
                     </div>
