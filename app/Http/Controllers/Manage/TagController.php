@@ -18,6 +18,6 @@ class TagController extends Controller
     public function index(Request $request)
     {
         $tags = Tag::all();
-        return view('manage.tags.index', ['tags' => $tags])
+        return view('manage.tags.index', ['tags' => $tags]);
     }
 }
