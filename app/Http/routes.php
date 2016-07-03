@@ -28,3 +28,6 @@ Route::get('/manage/projects/{project}/edit', 'Manage\ProjectController@edit');
 Route::put('/manage/projects/{project}', 'Manage\ProjectController@update');
 Route::post('/manage/projects', 'Manage\ProjectController@store');
 Route::delete('manage/projects/{project}', 'Manage\ProjectController@destroy');
+
+//Routes for managing tags
+Route::get('/manage/tags', 'Manage\TagController@index');
