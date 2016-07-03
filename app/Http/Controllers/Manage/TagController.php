@@ -33,6 +33,6 @@ class TagController extends Controller
      */
     public function create(Request $request)
     {
-        return view('manage.projects.create');
+        return view('manage.tags.create');
     }
 }
