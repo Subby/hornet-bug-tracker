@@ -25,8 +25,8 @@
                                 <label for="colour">Colour</label>
                                 <select class="form-control" id="colour">
                                     <option value="bg-primary" class="bg-primary">Blue</option>
-                                    <option value="bg-success" class="bg-info">Light Blue</option>
-                                    <option value="bg-info"  class="bg-success">Green</option>
+                                    <option value="bg-info" class="bg-info">Light Blue</option>
+                                    <option value="bg-success"  class="bg-success">Green</option>
                                     <option value="bg-warning" class="bg-warning">Yellow</option>
                                     <option value="bg-danger" class="bg-danger">Red</option>
                                 </select>
