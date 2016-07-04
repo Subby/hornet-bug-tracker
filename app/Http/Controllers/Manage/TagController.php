@@ -35,4 +35,24 @@ class TagController extends Controller
     {
         return view('manage.tags.create');
     }
+
+    /**
+     * Store newly created tag.
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:12',
+            'colour' => 'required'
+        ]);
+
+        $tag = new Tag;
+        $tag->name = $request->name;
+        $tag->colour = $request->colour;
+        $tag->save();
+
+        return redirect('/manage/tags');
+    }
 }
