@@ -88,6 +88,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $this->validate($request, [
+            'name' => 'required|max:12',
+            'description' => 'required',
+            'open' => 'required'
+        ]);
+
         $project->name = $request->name;
         $project->description = $request->description;
         if(isset($request->open)) {
