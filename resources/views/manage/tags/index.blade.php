@@ -22,7 +22,7 @@
                                 <tbody>
                                 @foreach($tags as $tag)
                                     <tr>
-                                        <td>{{$tag->name}}</td>
+                                        <td class="{{$tag->colour}}">{{$tag->name}}</td>
                                         <td>
                                             <form action="{{url('manage/tags/' . $tag->id. '/edit')}}">
                                                 <button type="submit" id="edit-task-{{ $tag->id }}" class="btn btn-primary">
