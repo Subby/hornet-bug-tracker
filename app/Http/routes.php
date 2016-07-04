@@ -32,4 +32,7 @@ Route::delete('manage/projects/{project}', 'Manage\ProjectController@destroy');
 //Routes for managing tags
 Route::get('/manage/tags', 'Manage\TagController@index');
 Route::get('/manage/tags/create', 'Manage\TagController@create');
+Route::get('/manage/tags/{tag}/edit', 'Manage\TagController@edit');
+Route::put('/manage/tags/{tag}', 'Manage\TagController@update');
 Route::post('/manage/tags', 'Manage\TagController@store');
+Route::delete('manage/projects/{tag}', 'Manage\TagController@destroy');

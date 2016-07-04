@@ -55,4 +55,48 @@ class TagController extends Controller
 
         return redirect('/manage/tags');
     }
+
+    /**
+     * Shows the edits form for an existing tag.
+     * @param Request $request
+     * @param Tag $tag
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function edit(Request $request, Tag $tag)
+    {
+        return view('manage.tags.edit', ['tag' => $tag]);
+    }
+
+    /**
+     * Updates an existing tag.
+     * @param Request $request
+     * @param Tag $tag
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(Request $request, Tag $tag)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:12',
+            'colour' => 'required'
+        ]);
+
+        $tag->name = $request->name;
+        $tag->colour = $request->colour;
+        $tag->save();
+
+        return redirect('/manage/tags');
+    }
+
+    /**
+     * Deletes an existing tag.
+     * @param Request $request
+     * @param Tag $tag
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
+    public function destroy(Request $request, Tag $tag)
+    {
+        $tag->delete();
+        return redirect('/manage/tags');
+    }
 }
