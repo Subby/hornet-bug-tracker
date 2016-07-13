@@ -12,6 +12,7 @@ class TagController extends Controller
 {
     public function __construct()
     {
+        $this->authorize('accessManagePanel');
         $this->middleware('auth');
     }
 

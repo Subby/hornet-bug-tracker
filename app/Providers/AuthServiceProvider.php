@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+
     ];
 
     /**
@@ -24,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
+        foreach(get_class_methods(new \App\Policies\ManagePolicy) as $method) {
+            $gate->define($method, "App\Policies\ManagePolicy@{$method}");
+        }
         $this->registerPolicies($gate);
 
         //

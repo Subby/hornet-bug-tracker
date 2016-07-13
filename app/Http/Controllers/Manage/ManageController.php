@@ -23,6 +23,7 @@ class ManageController extends Controller
 
     public function index(Request $request)
     {
+        $this->authorize('accessManagePanel');
         $projects = Project::all();
         return view('manage.home', ['projects' => $projects]);
     }
