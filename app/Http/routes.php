@@ -35,4 +35,12 @@ Route::get('/manage/tags/create', 'Manage\TagController@create');
 Route::get('/manage/tags/{tag}/edit', 'Manage\TagController@edit');
 Route::put('/manage/tags/{tag}', 'Manage\TagController@update');
 Route::post('/manage/tags', 'Manage\TagController@store');
-Route::delete('manage/projects/{tag}', 'Manage\TagController@destroy');
+Route::delete('manage/tags/{tag}', 'Manage\TagController@destroy');
+
+
+//Routes for managing users
+Route::get('/manage/users', 'Manage\UserController@index');
+Route::get('/manage/users/search', 'Manage\UserController@search');
+Route::get('/manage/users/{user}/edit', 'Manage\UserController@edit');
+Route::put('/manage/users/{user}', 'Manage\UserController@update');
+Route::delete('manage/users/{user}', 'Manage\UserController@destroy');
