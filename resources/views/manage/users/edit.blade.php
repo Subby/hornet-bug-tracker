@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit user {{$user->name}}</div>
+                    <div class="panel-heading">@lang('manage/users.edit_user') {{$user->name}}</div>
 
                     <div class="panel-body">
                         @include('common.errors')
@@ -18,12 +18,12 @@
                                     <input type="checkbox" name="open"
                                            @if($user->admin)
                                            checked
-                                            @endif> Is an administrator
+                                            @endif> @lang('manage/users.is_an_admin')
                                 </label>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-btn fa-edit"></i>Edit User
+                                    <i class="fa fa-btn fa-edit"></i>@lang('manage/users.edit_user')
                                 </button>
                             </div>
                         </form>

@@ -5,17 +5,17 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Manage Projects</div>
+                    <div class="panel-heading">@lang('manage/projects.manage_projects')</div>
 
                     <div class="panel-body">
                         @if(count($projects) <= 0)
-                            <p>There are currently no projects. <a href="projects/create">Add</a> one?</p>
+                            <p>@lang('manage/projects.no_projects') <a href="projects/create">@lang('manage/projects.add')</a> @lang('manage/projects.one')</p>
                         @else
                             <table class="table table-striped task-table">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Issues</th>
+                                        <th>@lang('manage/projects.name')</th>
+                                        <th>@lang('manage/projects.issues')</th>
                                         <th>&nbsp;</th>
                                         <th>&nbsp;</th>
                                     </tr>
@@ -28,7 +28,7 @@
                                         <td>
                                             <form action="{{url('manage/projects/' . $project->id. '/edit')}}">
                                                 <button type="submit" id="edit-task-{{ $project->id }}" class="btn btn-primary">
-                                                    <i class="fa fa-btn fa-edit"></i>Edit
+                                                    <i class="fa fa-btn fa-edit"></i>@lang('manage/projects.edit')
                                                 </button>
                                             </form>
                                         </td>
@@ -38,7 +38,7 @@
                                                 {{ method_field('DELETE') }}
 
                                                 <button type="submit" id="delete-task-{{ $project->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Delete
+                                                    <i class="fa fa-btn fa-trash"></i>@lang('manage/projects.delete')
                                                 </button>
                                             </form>
                                         </td>
@@ -50,7 +50,7 @@
                         @endif
                             <form action="{{url('manage/projects/create')}}">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-plus"></i>Create New Project
+                                    <i class="fa fa-btn fa-plus"></i>@lang('manage/projects.create_new_project')
                                 </button>
                             </form>
                     </div>

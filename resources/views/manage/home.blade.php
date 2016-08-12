@@ -5,17 +5,17 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Manage</div>
+                    <div class="panel-heading">@lang('manage/index.manage')</div>
 
                     <div class="panel-body">
                         @if(count($projects) <= 0)
-                            <p>There are currently no projects. <a href="manage/projects/create">Add</a> one?</p>
+                            <p>@lang('manage/index.no_projects'). <a href="manage/projects/create">@lang('manage/index.add')</a> @lang('manage/index.one_question_mark')</p>
                         @else
                             <table class="table table-striped task-table">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Issues</th>
+                                    <th>@lang('manage/projects.name')</th>
+                                    <th>@lang('manage/projects.issues')</th>
                                 </tr>
                                 </thead>
                                 <tbody>

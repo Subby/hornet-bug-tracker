@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Manage Users</div>
+                    <div class="panel-heading">@lang('manage/users.manage_users')</div>
 
                     <div class="panel-body">
                         @if(count($results) <= 0)
-                            <p>There were not results found. <a href="/manage/users/">Search again</a>?</p>
+                            <p>@lang('manage/users.no_results_found') <a href="/manage/users/">@lang('manage/users.search_again')</a>@lang('manage/users.question_mark')</p>
                         @else
                             <table class="table table-striped task-table">
                                 <thead>
-                                    <th>Name</th>
+                                    <th>@lang('manage/users.name')</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
                                 </thead>
@@ -23,7 +23,7 @@
                                         <td>
                                             <form action="{{url('manage/users/' . $user->id. '/edit')}}">
                                                 <button type="submit" id="edit-user-{{ $user->id }}" class="btn btn-primary">
-                                                    <i class="fa fa-btn fa-edit"></i>Edit
+                                                    <i class="fa fa-btn fa-edit"></i>@lang('manage/users.edit')
                                                 </button>
                                             </form>
                                         </td>
@@ -33,7 +33,7 @@
                                                 {{ method_field('DELETE') }}
 
                                                 <button type="submit" id="delete-user-{{ $user->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Delete
+                                                    <i class="fa fa-btn fa-trash"></i>@lang('manage/users.delete')
                                                 </button>
                                             </form>
                                         </td>
