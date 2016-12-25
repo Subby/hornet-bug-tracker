@@ -11,15 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@dashboard');
 
 Route::get('/manage', 'Manage\ManageController@index');
+
+//Routes for viewing projects
+Route::get('/project/{project}', 'ProjectController@view');
 
 //Routes for managing projects
 Route::get('/manage/projects', 'Manage\ProjectController@index');

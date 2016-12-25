@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Project;
 
 class HomeController extends Controller
 {
@@ -18,11 +19,22 @@ class HomeController extends Controller
     }
 
     /**
+     * Shows the welcome page.
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+    	$projects = Project::all();
+    	return view('welcome', ['projects' => $projects]);
+    }
+    
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function dashboard()
     {
         return view('home');
     }
