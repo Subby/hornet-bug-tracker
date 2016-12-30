@@ -19,8 +19,13 @@ Route::get('/home', 'HomeController@dashboard');
 
 Route::get('/manage', 'Manage\ManageController@index');
 
-//Routes for viewing projects
-Route::get('/project/{project}', 'ProjectController@view');
+//Routes for projects
+Route::get('/project/{project}/issues', 'ProjectController@view');
+Route::get('/project/{project}/issues/create', 'IssueController@create');
+
+//Routes for issues
+Route::get('/issue/create', 'IssueController@store');
+Route::get('/issue/{issue}', 'IssueController@view');
 
 //Routes for managing projects
 Route::get('/manage/projects', 'Manage\ProjectController@index');

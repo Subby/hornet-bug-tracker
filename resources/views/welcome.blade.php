@@ -21,7 +21,7 @@
                                 <tbody>
                                 @foreach($projects as $project)
                                     <tr>
-                                        <td><a href="{{url('project/' . $project->id)}}">{{$project->name}}</td>
+                                        <td><a href="{{url('project/' . $project->id) . '/issues'}}">{{$project->name}}</td>
                                         <td>{{count(App\Project::find($project->id)->issues)}}</td>
                                     </tr>
                                 @endforeach
