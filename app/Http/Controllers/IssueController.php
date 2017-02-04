@@ -36,4 +36,28 @@ class IssueController extends Controller
 	{
 		return view('issues.view', ['issue' => $issue]);
 	}
+
+	/**
+	 * Store newly created issue.
+	 * @param Request $request
+	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 */
+	public function store(Request $request, Project $project)
+	{
+		print_r($project->id);
+		
+		$this->validate($request, [
+				'title' => 'required',
+				'description' => 'required'
+		]);
+		
+		$issue = new Issue();
+		$issue->title = $request->title;
+		$issue->comment = $request->description;
+		$issue->project_id = $project->id;
+		$issue->user_id = $request->user()->id;
+		$issue->save();
+	
+		return redirect('/issue/'.$issue->id);
+	}
 }

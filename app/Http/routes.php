@@ -24,8 +24,8 @@ Route::get('/project/{project}/issues', 'ProjectController@view');
 Route::get('/project/{project}/issues/create', 'IssueController@create');
 
 //Routes for issues
-Route::get('/issue/create', 'IssueController@store');
 Route::get('/issue/{issue}', 'IssueController@view');
+Route::post('/project/{project}/issues/create', 'IssueController@store');
 
 //Routes for managing projects
 Route::get('/manage/projects', 'Manage\ProjectController@index');

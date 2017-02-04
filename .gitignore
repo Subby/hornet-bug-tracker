@@ -10,3 +10,6 @@ Homestead.json
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.buildpath
+.project
+.settings/org.eclipse.wst.validation.prefs

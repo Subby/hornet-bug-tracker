@@ -1,4 +1,4 @@
-@extends('manage.layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -9,8 +9,7 @@
 
                     <div class="panel-body">
                         @include('common.errors')
-
-                        <form action="{{url('issue')}}" method="POST">
+                        <form action="/project/{{$project->id}}/issues/create" method="POST">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="title">@lang('issues.title')</label>
