@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Issue;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Response;
 
 class IssueController extends Controller 
 {
@@ -43,9 +45,7 @@ class IssueController extends Controller
 	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
 	 */
 	public function store(Request $request, Project $project)
-	{
-		print_r($project->id);
-		
+	{	
 		$this->validate($request, [
 				'title' => 'required',
 				'description' => 'required'
@@ -59,5 +59,43 @@ class IssueController extends Controller
 		$issue->save();
 	
 		return redirect('/issue/'.$issue->id);
+	}
+	
+	/**
+	 * Edit an existing issue.
+	 * @param Request $request
+	 * @param unknown $id
+	 * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory|unknown
+	 */
+	public function edit(Request $request, $id)
+	{
+		$issue = Issue::findOrFail($id);
+		if ((Auth::user()->admin) || ($issue->user_id == Auth::user()->id)) {
+			return view('issues.edit', ['issue' => $issue]);
+		}	
+		
+		return response('Forbidden', 403);
+	}
+	
+	/**
+	 * Update an existing issue.
+	 * @param Request $request
+	 * @param Issue $issue
+	 */
+	public function update(Request $request, Issue $issue)
+	{
+		if ((Auth::user()->admin) || ($issue->user_id == Auth::user()->id)) {
+			$this->validate($request, [
+					'title' => 'required',
+					'description' => 'required'
+			]);
+			$issue->title = $request->title;
+			$issue->comment = $request->description;
+			$issue->open = isset($request->open);
+			$issue->save();
+			
+			return redirect('/issue/'.$issue->id);
+		}
+		return response('Forbidden', 403);
 	}
 }

@@ -20,4 +20,5 @@ return [
 'description'	=> 'Description',
 'status'		=> 'Status',
 'add_new_issue_for_project' => 'Add New Issue for Project',
+'open'			=> 'Open'
 ];
